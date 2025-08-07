@@ -561,8 +561,7 @@
     </button>
 </form>
 
-<!-- Добавьте этот div для сообщения об успешной отправке -->
-<div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+<div id="form-success" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg {{ !$success ? 'hidden' : '' }}">
     Сообщение успешно отправлено!
 </div>
 
