@@ -1,0 +1,172 @@
+/* Базовые стили (остаются как есть) */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+/* Шапка (адаптив) */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    order: 3;
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: none; /* Скрыто по умолчанию на мобильных */
+}
+
+nav.active {
+    display: flex; /* Показываем при клике на бургер */
+}
+
+nav a {
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    order: 2;
+}
+
+/* Герой-секция (адаптив) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+/* О компании (адаптив) */
+.features {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    width: 100%;
+}
+
+/* Тренинги (адаптив) */
+.training-list {
+    flex-direction: column;
+}
+
+.training-card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Форма (адаптив) */
+#contact-form input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Бургер-меню для мобильных */
+@media (min-width: 768px) {
+    /* Для планшетов и десктопов */
+    header .container {
+        flex-wrap: nowrap;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        order: 2;
+        margin-top: 0;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .logo {
+        margin-bottom: 0;
+    }
+    .features {
+        flex-direction: row;
+    }
+    .training-list {
+        flex-direction: row;
+    }
+    .hero h1 {
+        font-size: 48px;
+    }
+}
+
+/* Мелкие правки для очень маленьких экранов */
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 0;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
